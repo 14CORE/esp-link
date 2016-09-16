@@ -95,13 +95,13 @@ callback registration.
 These screen shots show the Home page, the Wifi configuration page, the console for the
 attached microcontroller, and the pin assignments card:
 
-image:http://desire.giesecke.tk/docs/esp-lnk/01.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/02.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/03.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/04.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/05.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/06.png[width="45%"]
-image:http://desire.giesecke.tk/docs/esp-lnk/07.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/01.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/02.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/03.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/04.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/05.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/06.png[width="45%"]
+image:http://desire.giesecke.tk/docs/esp-link/07.png[width="45%"]
 
 Getting Started
 ---------------
