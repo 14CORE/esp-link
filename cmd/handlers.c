@@ -27,6 +27,7 @@ static void cmdSync(CmdPacket *cmd);
 static void cmdWifiStatus(CmdPacket *cmd);
 static void cmdGetTime(CmdPacket *cmd);
 static void cmdAddCallback(CmdPacket *cmd);
+static void cmdRestart(CmdPacket *cmd);
 
 // keep track of last status sent to uC so we can notify it when it changes
 static uint8_t lastWifiStatus = wifiIsDisconnected;
@@ -39,6 +40,7 @@ const CmdList commands[] = {
   {CMD_WIFI_STATUS,     "WIFI_STATUS",    cmdWifiStatus},
   {CMD_CB_ADD,          "ADD_CB",         cmdAddCallback},
   {CMD_GET_TIME,        "GET_TIME",       cmdGetTime},
+  {CMD_RESTART,         "RESTART",        cmdRestart},
 #ifdef MQTT
   {CMD_MQTT_SETUP,      "MQTT_SETUP",     MQTTCMD_Setup},
   {CMD_MQTT_PUBLISH,    "MQTT_PUB",       MQTTCMD_Publish},
@@ -164,6 +166,18 @@ static void ICACHE_FLASH_ATTR
 cmdGetTime(CmdPacket *cmd) {
   cmdResponseStart(CMD_RESP_V, sntp_get_current_timestamp(), 0);
   cmdResponseEnd();
+  return;
+}
+
+// Command handler for restart ESP module
+static void ICACHE_FLASH_ATTR
+cmdRestart(CmdPacket *cmd) {
+  // Reset attached uC (if reset line is connected)
+  serbridgeReset();
+  // Reset ESP8266 module
+  system_restart();
+  // Wait for reset
+  while (1);
   return;
 }
 
