@@ -29,6 +29,7 @@ static void cmdWifiStatus(CmdPacket *cmd);
 static void cmdGetTime(CmdPacket *cmd);
 static void cmdAddCallback(CmdPacket *cmd);
 static void cmdRestart(CmdPacket *cmd);
+static void cmdRestartSystem(CmdPacket *cmd);
 
 // keep track of last status sent to uC so we can notify it when it changes
 static uint8_t lastWifiStatus = wifiIsDisconnected;
