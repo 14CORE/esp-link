@@ -6,6 +6,7 @@
 #include "sntp.h"
 #include "cmd.h"
 #include <cgiwifi.h>
+#include "serbridge.h"
 #ifdef MQTT
 #include <mqtt_cmd.h>
 #endif
@@ -41,6 +42,7 @@ const CmdList commands[] = {
   {CMD_CB_ADD,          "ADD_CB",         cmdAddCallback},
   {CMD_GET_TIME,        "GET_TIME",       cmdGetTime},
   {CMD_RESTART,         "RESTART",        cmdRestart},
+  {CMD_RESTARTSYS,      "RESTARTSYS",     cmdRestartSystem},
 #ifdef MQTT
   {CMD_MQTT_SETUP,      "MQTT_SETUP",     MQTTCMD_Setup},
   {CMD_MQTT_PUBLISH,    "MQTT_PUB",       MQTTCMD_Publish},
@@ -172,6 +174,16 @@ cmdGetTime(CmdPacket *cmd) {
 // Command handler for restart ESP module
 static void ICACHE_FLASH_ATTR
 cmdRestart(CmdPacket *cmd) {
+  // Reset ESP8266 module
+  system_restart();
+  // Wait for reset
+  while (1);
+  return;
+}
+
+// Command handler for restart ESP module & connected uC
+static void ICACHE_FLASH_ATTR
+cmdRestartSystem(CmdPacket *cmd) {
   // Reset attached uC (if reset line is connected)
   serbridgeReset();
   // Reset ESP8266 module

@@ -39,7 +39,8 @@ typedef enum {
   CMD_CB_ADD,
   CMD_CB_EVENTS,
   CMD_GET_TIME,       // get current time in seconds since the unix epoch
-  CMD_RESTART,        // Reset both ESP and attached Arduino
+  CMD_RESTART,        // Reset ESP
+  CMD_RESTARTSYS,     // Reset both ESP and attached Arduino
 
   CMD_MQTT_SETUP = 10,  // set-up callbacks
   CMD_MQTT_PUBLISH,     // publish a message
