@@ -151,7 +151,7 @@ function toggleClass(el, cl) {
 
 //===== AJAX
 
-function ajaxReq(method, url, ok_cb, err_cb) {
+function ajaxReq(method, url, ok_cb, err_cb, data) {
   var xhr = j();
   xhr.open(method, url, true);
   var timeout = setTimeout(function() {
@@ -173,7 +173,7 @@ function ajaxReq(method, url, ok_cb, err_cb) {
   }
 //  console.log("XHR send:", method, url);
   try {
-    xhr.send();
+    xhr.send(data);
   } catch(err) {
     console.log("XHR EXC :", method, url, "->", err);
     err_cb(599, err);
@@ -232,7 +232,7 @@ onLoad(function() {
   var mm = m(
    '<div id="menu">\
       <div class="pure-menu">\
-        <a class="pure-menu-heading" href="https://github.com/beegee-tokyo/esp-link/tree/beegee-flavor">\
+        <a class="pure-menu-heading" href="https://github.com/jeelabs/esp-link">\
         <img src="/favicon.ico" height="32">&nbsp;esp-link</a>\
         <div class="pure-menu-heading system-name" style="padding: 0px 0.6em"></div>\
         <ul id="menu-list" class="pure-menu-list"></ul>\

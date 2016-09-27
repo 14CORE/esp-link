@@ -1,6 +1,6 @@
   <div id="main">
     <div class="header">
-      <div><img src="favicon.ico" height="64"><span class="jl">BeeGee HomeControl</span></div>
+      <div><img src="favicon.ico" height="64"><span class="jl">Arduino Uno WiFi</span></div>
       <h1 style="margin-top:0"><span class="esp">esp</span>-link</h1>
       <h2 id="version"></h2>
     </div>
@@ -32,23 +32,7 @@
           <div class="card">
             <h1>Info</h1>
             <p style="margin-bottom:0;">The esp-link firmware bridges the ESP8266
-            serial port to WiFi and can
-            program microcontrollers over the serial port, in particular Arduinos, AVRs, and
-            NXP's LPC800 and other ARM processors. Typical avrdude command line to
-            program an Arduino:</p>
-            <div class="tt" style="font-size:100%;">
-              /home/arduino/hardware/tools/avrdude&nbsp;\<br>
-              &nbsp;&nbsp;-DV -patmega328p \<br>
-              &nbsp;&nbsp;-Pnet:esp-link.local:23 \<br>
-              &nbsp;&nbsp;-carduino -b115200 \<br>
-              &nbsp;&nbsp;-U flash:w:my_sketch.hex:i\<br>
-              &nbsp;&nbsp;-C /home/arduino/hardware/tools/avrdude.conf
-            </div>
-            <p>where <tt>-Pnet:esp-link.local:23</tt> tells avrdude to connect to port 23 of esp-link.
-            You can substitute the IP address of your esp-link for esp-link.local if necessary.
-            Please refer to
-            <a href="https://github.com/beegee-tokyo/esp-link/blob/beegee-flavor/README.adoc">the online README</a>
-            for up-to-date help.</p>
+            serial port to the AVR uC</p>
           </div>
         </div>
         <!-- RIGHT COLUMN -->
@@ -121,6 +105,12 @@
               <div>
                 <span class="system-size"></span>
                 <div class="popup pop-left">Size configured into bootloader, must match chip size</div>
+              </div>
+            </td></tr>
+            <tr><td>Webpage size</td><td>
+              <div>
+                <span class="system-upload-size"></span>
+                <div class="popup pop-left">The maximal size of the custom web page a user can upload.</div>
               </div>
             </td></tr>
             <tr><td>Current partition</td><td class="system-partition"></td></tr>
